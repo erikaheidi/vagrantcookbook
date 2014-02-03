@@ -1,0 +1,4 @@
+vagrantcookbook
+===============
+
+Vagrant Cookbook - Recipes
