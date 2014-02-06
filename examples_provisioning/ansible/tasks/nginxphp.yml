@@ -12,7 +12,7 @@
   template: src=files/nginx/default.tpl dest=/etc/nginx/sites-available/default
   notify: restart nginx
 
-- name: nginxphp | Install PHP Modules
+- name: nginxphp | Install PHP Packages
   sudo: yes
   apt: pkg={{ item }} state=latest
   with_items: php_packages

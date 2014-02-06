@@ -1,7 +1,9 @@
-################################################
-# sandbox-php Chef provisioning: entry point
-# @author Erika Heidi <erika@erikaheidi.com>
-################################################
+######################################################################
+# Vagrant CookBook - provisioning examples
+# https://leanpub.com/vagrantcookbook
+#
+# NGINX+PHP CHEF PROVISIONING
+######################################################################
 
 #system packages
 node.default['system']['packages'] = ['curl','git','vim']
@@ -11,7 +13,7 @@ node.default['nginx']['server_name'] = "192.168.33.101"
 node.default['nginx']['doc_root'] = "/vagrant/web"
 
 #php packages
-node.default['php']['packages'] = ['php5-cli','php5-curl']
+node.default['php']['packages'] = ['php5-curl','php5-cli']
 
 execute "apt-get update" do
     command "apt-get update"
@@ -30,11 +32,9 @@ execute "apt-get update" do
 end
 
 node['system']['packages'].each do |p|
-
- apt_package p do
-     action :install
- end
-
+    apt_package p do
+        action :install
+    end
 end
 
 include_recipe 'nginxphp'

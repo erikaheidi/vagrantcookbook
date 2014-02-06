@@ -1,8 +1,8 @@
 ######################################################################
-# @author Erika Heidi <erika@erikaheidi.com>
-# @copyright 2014
+# Vagrant CookBook - provisioning examples
+# https://leanpub.com/vagrantcookbook
 #
-# MAIN MANIFEST - SANDBOX PHP PUPPET PROVISION
+# NGINX+PHP PUPPET PROVISIONING
 ######################################################################
 
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }

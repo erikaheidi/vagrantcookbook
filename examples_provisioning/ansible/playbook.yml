@@ -1,3 +1,9 @@
+######################################################################
+# Vagrant CookBook - provisioning examples
+# https://leanpub.com/vagrantcookbook
+#
+# NGINX+PHP ANSIBLE PROVISIONING
+######################################################################
 ---
 - hosts: all
   sudo: true

@@ -8,14 +8,6 @@
   apt: pkg={{ item }} state=latest
   with_items: sys_packages
 
-- name: init | Install Curl
-  sudo: yes
-  apt: pkg=curl state=latest
-
-- name: init | Install Vim
-  sudo: yes
-  apt: pkg=vim state=latest
-
 - name: init | make sure python-software-properties is installed
   sudo: yes
   apt: pkg=python-software-properties state=latest
