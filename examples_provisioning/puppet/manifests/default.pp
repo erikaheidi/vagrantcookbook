@@ -1,10 +1,3 @@
-######################################################################
-# Vagrant CookBook - provisioning examples
-# https://leanpub.com/vagrantcookbook
-#
-# NGINX+PHP PUPPET PROVISIONING
-######################################################################
-
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
 $system_packages = ['vim', 'curl', 'git']

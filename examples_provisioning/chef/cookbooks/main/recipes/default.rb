@@ -1,10 +1,3 @@
-######################################################################
-# Vagrant CookBook - provisioning examples
-# https://leanpub.com/vagrantcookbook
-#
-# NGINX+PHP CHEF PROVISIONING
-######################################################################
-
 #system packages
 node.default['system']['packages'] = ['curl','git','vim']
 

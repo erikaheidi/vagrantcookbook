@@ -1,8 +1,3 @@
-# Class: nginxphp
-#
-# Main nginxphp manifest
-#
-
 class nginxphp(
   $doc_root = '/vagrant',
   $php_packages = ['php5-curl', 'php5-cli', 'php-pear', 'php5-mysql']
