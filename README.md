@@ -1,4 +1,6 @@
-vagrantcookbook
+Vagrant Cookbook
 ===============
 
-Vagrant Cookbook - Recipes
+This repository contains the main examples from the Vagrant Cookbook.
+
+https://leanpub.com/vagrantcookbook
