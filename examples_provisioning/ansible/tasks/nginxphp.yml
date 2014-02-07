@@ -12,6 +12,3 @@
 - name: nginxphp | Install PHP Packages
   apt: pkg={{ item }} state=latest
   with_items: php_packages
-
-- name: nginxphp | Install Composer
-  shell: curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer creates=/usr/local/bin/composer

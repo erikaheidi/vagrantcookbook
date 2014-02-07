@@ -1,12 +1,4 @@
-# nginx and php5-fpm
 ["nginx", "php5-fpm"].each do |p|
-    apt_package p do
-        action :install
-    end
-end
-
-# php packages
-node['php']['packages'].each do |p|
     apt_package p do
         action :install
     end
@@ -20,7 +12,6 @@ service "php5-fpm" do
     action [ :enable, :start ]
 end
 
-# set nginx default site
 template "/etc/nginx/sites-available/default" do
     source "vhost.erb"
     variables({
@@ -31,3 +22,8 @@ template "/etc/nginx/sites-available/default" do
     notifies :restart, resources(:service => "nginx")
 end
 
+node['php']['packages'].each do |p|
+    apt_package p do
+        action :install
+    end
+end

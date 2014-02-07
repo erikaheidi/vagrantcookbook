@@ -1,6 +1,6 @@
 class nginxphp(
   $doc_root = '/vagrant',
-  $php_packages = ['php5-curl', 'php5-cli', 'php-pear', 'php5-mysql']
+  $php_packages = ['php5-curl', 'php5-cli']
 ) {
 
   package { ['nginx', 'php5-fpm']:
@@ -21,6 +21,7 @@ class nginxphp(
     ensure  => 'present',
     content => template("nginxphp/nginx/vhost.erb"),
     require => Package['nginx'],
+    notify  => Service['nginx'],
   }
 
   package { $php_packages:
