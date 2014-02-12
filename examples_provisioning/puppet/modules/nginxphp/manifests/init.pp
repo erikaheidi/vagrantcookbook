@@ -1,4 +1,5 @@
 class nginxphp(
+  $server_name = 'localhost',
   $doc_root = '/vagrant',
   $php_packages = ['php5-curl', 'php5-cli']
 ) {

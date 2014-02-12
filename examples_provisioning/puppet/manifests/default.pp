@@ -30,6 +30,7 @@ exec { 'apt-update-refresh':
 }
 
 class { 'nginxphp':
+  server_name => $ipaddress_eth1,
   doc_root => '/vagrant/web',
   php_packages => $php_packages,
 }
