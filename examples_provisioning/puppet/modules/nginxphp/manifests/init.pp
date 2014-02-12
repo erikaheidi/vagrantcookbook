@@ -20,7 +20,7 @@ class nginxphp(
 
   file { "/etc/nginx/sites-available/default":
     ensure  => 'present',
-    content => template("nginxphp/nginx/vhost.erb"),
+    content => template("nginxphp/vhost.erb"),
     require => Package['nginx'],
     notify  => Service['nginx'],
   }
