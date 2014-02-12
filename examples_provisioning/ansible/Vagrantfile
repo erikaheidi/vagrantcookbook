@@ -9,6 +9,6 @@ Vagrant.configure("2") do |config|
         ansible.playbook = "playbook.yml"
     end
 
-    config.vm.synced_folder "../testapp", "/vagrant", :nfs => true
+    config.vm.synced_folder "../../testapp", "/vagrant", :nfs => true
 
 end
