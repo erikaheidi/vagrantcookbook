@@ -1,16 +1,16 @@
 ---
-- name: init | Update apt
+- name: Update apt
   apt: update_cache=yes
 
-- name: init | Install Sys Packages
+- name: Install Sys Packages
   apt: pkg={{ item }} state=latest
   with_items: sys_packages
 
-- name: init | make sure python-software-properties is installed
+- name: Make sure python-software-properties is installed
   apt: pkg=python-software-properties state=latest
 
-- name: init | Add ppa Repository
+- name: Add ppa Repository
   apt_repository: repo='ppa:ondrej/php5'
 
-- name: init | Update apt
+- name: Update apt
   apt: update_cache=yes

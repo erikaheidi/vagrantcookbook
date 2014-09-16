@@ -6,12 +6,6 @@
     server_name: "{{ ansible_eth1.ipv4.address }}"
     sys_packages: [ 'curl', 'vim', 'git']
     php_packages: [ 'php5-curl', 'php5-cli' ]
-  tasks:
-    - include: tasks/init.yml
-    - include: tasks/nginxphp.yml
-  handlers:
-    - name: restart nginx
-      service: name=nginx state=restarted
-
-    - name: restart php5-fpm
-      service: name=php5-fpm state=restarted
+  roles:
+    - init
+    - nginxphp
