@@ -1,11 +1,11 @@
 ---
 - hosts: all
-  sudo: true
+  become: true
   vars:
     doc_root: /vagrant/web
     server_name: "{{ ansible_eth1.ipv4.address }}"
     sys_packages: [ 'curl', 'vim', 'git']
-    php_packages: [ 'php5-curl', 'php5-cli' ]
+    php_packages: [ 'php7.0-curl', 'php7.0-cli' ]
   roles:
     - init
     - nginxphp

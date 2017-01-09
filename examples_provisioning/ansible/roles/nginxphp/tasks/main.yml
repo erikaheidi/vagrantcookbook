@@ -2,11 +2,11 @@
 - name: Install Nginx
   apt: pkg=nginx state=latest
 
-- name: Install php5-fpm
-  apt: pkg=php5-fpm state=latest
+- name: Install php7.0-fpm
+  apt: pkg=php7.0-fpm state=latest
 
 - name: Change default nginx site
-  template: src=files/nginx/default.tpl dest=/etc/nginx/sites-available/default
+  template: src=default.tpl dest=/etc/nginx/sites-available/default
   notify: restart nginx
 
 - name: Install PHP Packages
