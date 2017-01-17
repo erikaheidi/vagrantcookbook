@@ -3,7 +3,7 @@ node.default['system']['packages'] = ['curl','git','vim']
 node.default['nginx']['server_name'] = "192.168.33.101"
 node.default['nginx']['doc_root'] = "/vagrant/web"
 
-node.default['php']['packages'] = ['php5-curl','php5-cli']
+node.default['php']['packages'] = ['php7.0-curl','php7.0-cli']
 
 execute "apt-get update" do
     command "apt-get update"
@@ -14,7 +14,7 @@ apt_package "python-software-properties" do
 end
 
 execute "add-apt-repository" do
-    command "add-apt-repository ppa:ondrej/php5"
+    command "add-apt-repository ppa:ondrej/php"
 end
 
 execute "apt-get update" do

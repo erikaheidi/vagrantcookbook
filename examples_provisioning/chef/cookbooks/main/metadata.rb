@@ -1,0 +1,2 @@
+name "vagrantcookbook"
+depends "nginxphp"

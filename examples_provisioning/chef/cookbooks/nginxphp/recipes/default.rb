@@ -1,4 +1,4 @@
-["nginx", "php5-fpm"].each do |p|
+["nginx", "php7.0-fpm"].each do |p|
     apt_package p do
         action :install
     end
@@ -8,7 +8,7 @@ service "nginx" do
     action [ :enable, :start ]
 end
 
-service "php5-fpm" do
+service "php7.0-fpm" do
     action [ :enable, :start ]
 end
 
