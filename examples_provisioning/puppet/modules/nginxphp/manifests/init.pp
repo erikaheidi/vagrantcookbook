@@ -1,10 +1,10 @@
 class nginxphp(
   $server_name = 'localhost',
   $doc_root = '/vagrant',
-  $php_packages = ['php5-curl', 'php5-cli']
+  $php_packages = ['php7.0-curl', 'php7.0-cli']
 ) {
 
-  package { ['nginx', 'php5-fpm']:
+  package { ['nginx', 'php7.0-fpm']:
     ensure  => 'installed'
   }
 
@@ -13,7 +13,7 @@ class nginxphp(
     enable     => true,
   }
 
-  service { 'php5-fpm':
+  service { 'php7.0-fpm':
     ensure     => running,
     enable     => true,
   }

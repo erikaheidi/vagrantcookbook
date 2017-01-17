@@ -1,7 +1,7 @@
 Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
 $system_packages = ['vim', 'curl', 'git']
-$php_packages = ['php5-cli', 'php5-curl']
+$php_packages = ['php7.0-cli', 'php7.0-curl']
 
 # first thing must be apt-get update
 exec { 'apt-get update':
@@ -14,7 +14,7 @@ package { 'python-software-properties':
 }
 
 exec { 'add-repository':
-  command => "add-apt-repository ppa:ondrej/php5 -y",
+  command => "add-apt-repository ppa:ondrej/php -y",
   require => Package['python-software-properties'],
 }
 

@@ -3,11 +3,11 @@
   apt: update_cache=yes
 
 - name: Install Sys Packages
-  apt: pkg={{ item }} state=latest
+  apt: name={{ item }} state=latest
   with_items: sys_packages
 
 - name: Make sure python-software-properties is installed
-  apt: pkg=python-software-properties state=latest
+  apt: name=python-software-properties state=latest
 
 - name: Add ppa Repository
   apt_repository: repo='ppa:ondrej/php'
