@@ -1,0 +1,14 @@
+---
+- name: Install Nginx
+  apt: name=nginx state=latest
+
+- name: Install php7.0-fpm
+  apt: name=php7.0-fpm state=latest
+
+- name: Change default nginx site
+  template: src=default.tpl dest=/etc/nginx/sites-available/default
+  notify: restart nginx
+
+- name: Install PHP Packages
+  apt: name={{ item }} state=latest
+  with_items: php_packages
