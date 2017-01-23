@@ -1,0 +1,17 @@
+###############################
+# Vagrant Push Test / Example
+###############################
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+
+  config.push.define "ftp" do |push| 
+    push.host = "SERVER_HOST"
+    push.dir = "web"
+    push.destination = "/var/www/html"
+    push.username = "FTP_USER"
+    push.password = "FTP_PASS"
+    push.secure = true
+  end
+end
+
